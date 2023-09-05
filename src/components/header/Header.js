@@ -43,49 +43,47 @@ const cart = (
   <span className={styles.cart}>
     <Link to="/cart">
       <FaShoppingCart size={20} />
-      <p>{ cartTotalQuantity }</p>
+      <p className="p-cart">{cartTotalQuantity}</p>
     </Link>
   </span>
-  );
-  
-  // Dispatching redux action
-  const dispatch = useDispatch();
+);
 
-  const fixNavbar = () => {
-    if(window.scrollY > 50){
-      setScrollPage(true);
-    } else
-    {
-      setScrollPage(false);
-    }
+// Dispatching redux action
+const dispatch = useDispatch();
+
+const fixNavbar = () => {
+  if (window.scrollY > 50) {
+    setScrollPage(true);
+  } else {
+    setScrollPage(false);
   }
-  window.addEventListener("scroll", fixNavbar);
+};
+window.addEventListener("scroll", fixNavbar);
 
-  // Monitor currently sign in user
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => { 
-      if(user){
-        if(user.displayName == null){
-          const u1 = user.email.substring(0, user.email.indexOf("@"));
-          const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
-          setDisplayName(uName);
-        } else{
-          setDisplayName(user.displayName);
-        }
-        dispatch(
-          SET_ACTIVE_USER({
-            email: user.email,
-            userName: user.displayName ? user.displayName : displayName,
-            userID: user.uid,
-          })
-        )
+// Monitor currently sign in user
+useEffect(() => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      if (user.displayName == null) {
+        const u1 = user.email.substring(0, user.email.indexOf("@"));
+        const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
+        setDisplayName(uName);
+      } else {
+        setDisplayName(user.displayName);
       }
-      else{
-        setDisplayName("");
-        dispatch(REMOVE_ACTIVE_USER());
-      }
-    });
-  }, [dispatch, displayName])
+      dispatch(
+        SET_ACTIVE_USER({
+          email: user.email,
+          userName: user.displayName ? user.displayName : displayName,
+          userID: user.uid,
+        })
+      );
+    } else {
+      setDisplayName("");
+      dispatch(REMOVE_ACTIVE_USER());
+    }
+  });
+}, [dispatch, displayName]);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
