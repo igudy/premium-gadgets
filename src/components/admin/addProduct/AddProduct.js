@@ -1,21 +1,28 @@
-import React, {useState} from 'react';
-import styles from './AddProduct.module.scss';
-import Card from '../../cards/Card';
-import { collection, addDoc, Timestamp, setDoc, doc } from "firebase/firestore"; 
-import { db } from '../../../firebase/config'
-import { deleteObject, getDownloadURL, getStorage, ref, uploadBytesResumable, uploadString } from "firebase/storage";
-import { toast } from 'react-toastify';
-import { useNavigate, useParams } from 'react-router-dom';
-import Loader from '../../loader/Loader';
-import { useSelector } from 'react-redux';
-import { selectProducts } from '../../../redux/slice/productSlice';
+import React, { useState } from "react";
+import styles from "./AddProduct.module.scss";
+import Card from "../../cards/Card";
+import { collection, addDoc, Timestamp, setDoc, doc } from "firebase/firestore";
+import { db } from "../../../firebase/config";
+import {
+  deleteObject,
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  uploadString,
+} from "firebase/storage";
+import { toast } from "react-toastify";
+import { useNavigate, useParams } from "react-router-dom";
+import Loader from "../../loader/Loader";
+import { useSelector } from "react-redux";
+import { selectProducts } from "../../../redux/slice/productSlice";
 
 const categories = [
-  {id: 1, name:"Laptop"},
-  {id: 2, name:"Electronics"},
-  {id: 3, name:"Fashion"},
-  {id: 4, name:"Phone"}
-]
+  { id: 1, name: `Laptop` },
+  { id: 2, name: "Electronics" },
+  { id: 3, name: "Fashion" },
+  { id: 4, name: "Phone" },
+];
 
 const storage = getStorage();
 
@@ -25,20 +32,17 @@ const initialState = {
   price: 0,
   category: "",
   brand: "",
-  desc: ""
-}
+  desc: "",
+};
 
 const AddProduct = () => {
   // useParams to get the particular id of that particular post
-  const {id} = useParams();
+  const { id } = useParams();
   const products = useSelector(selectProducts);
   const productEdit = products.find((item) => item.id === id);
   const [product, setProduct] = useState(() => {
-    const newState = detectForm(id, 
-      {...initialState},
-      productEdit
-      )
-      return newState;
+    const newState = detectForm(id, { ...initialState }, productEdit);
+    return newState;
   });
 
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -46,16 +50,16 @@ const AddProduct = () => {
   const navigate = useNavigate();
 
   // detectForm is used to differentiate between the add and edit id.
-  function detectForm(id, f1, f2){
-    if(id === 'ADD'){
+  function detectForm(id, f1, f2) {
+    if (id === "ADD") {
       return f1;
     }
     return f2;
   }
 
   const handleInputChange = (e) => {
-    const {name, value} = e.target
-    setProduct({...product, [name]: value});
+    const { name, value } = e.target;
+    setProduct({ ...product, [name]: value });
   };
 
   const handleImageChange = (e) => {
@@ -65,28 +69,30 @@ const AddProduct = () => {
     console.log(storageRef);
     const uploadTask = uploadBytesResumable(storageRef, file);
 
-    uploadTask.on('state_changed',
-    (snapshot) => {
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      setUploadProgress(progress);
-    }, 
-    (error) => {
-      toast.error(error.message);
-    }, 
-    () => {
-      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          setProduct({...product, imageURL: downloadURL})
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setUploadProgress(progress);
+      },
+      (error) => {
+        toast.error(error.message);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setProduct({ ...product, imageURL: downloadURL });
           toast.message("Image uploaded successfully");
-      });
-    }
-    );    
+        });
+      }
+    );
   };
 
   const addProduct = (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    try{
+    try {
       const docRef = addDoc(collection(db, "products"), {
         name: product.name,
         imageURL: product.imageURL,
@@ -94,29 +100,28 @@ const AddProduct = () => {
         category: product.category,
         brand: product.brand,
         desc: product.desc,
-        createdAt: Timestamp.now().toDate()
+        createdAt: Timestamp.now().toDate(),
       });
       setIsLoading(false);
       setUploadProgress(0);
       toast.success("Product uploaded successfully");
       navigate("/admin/all-products");
-    }
-    catch(error){
+    } catch (error) {
       setIsLoading(false);
       toast.error(error.message);
     }
-  }
+  };
 
   const editProduct = (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    if(product.imageURL !== productEdit.imageURL){
+    if (product.imageURL !== productEdit.imageURL) {
       const storageRef = ref(storage, productEdit.imageURL);
       deleteObject(storageRef);
     }
 
-    try{
+    try {
       setDoc(doc(db, "products", id), {
         name: product.name,
         imageURL: product.imageURL,
@@ -130,8 +135,7 @@ const AddProduct = () => {
       setIsLoading(false);
       toast.success("Product Edited Successfully");
       navigate("/admin/all-products");
-    }
-    catch(error){
+    } catch (error) {
       setIsLoading(false);
       toast.error(error.message);
     }
@@ -139,82 +143,88 @@ const AddProduct = () => {
 
   return (
     <>
-    {isLoading && <Loader />}
-    <div className={styles.product}>
-      <form onSubmit={detectForm(id, addProduct, editProduct)}>
-        <h1>{detectForm(id, "Add New Product", "Edit Product")}</h1>
+      {isLoading && <Loader />}
+      <div className={styles.product}>
+        <form onSubmit={detectForm(id, addProduct, editProduct)}>
+          <h1>{detectForm(id, "Add New Product", "Edit Product")}</h1>
           <Card cardClass={styles.card}>
-
             <label>Product name:</label>
-            <input type="text" 
-              placeholder="Product Name" 
-              required name="name" 
+            <input
+              type="text"
+              placeholder="Product Name"
+              required
+              name="name"
               value={product.name}
-              onChange={(e) => handleInputChange(e)} 
-          />
-
-          <label>Product Image:</label>
-          <Card cardClass={styles.group}>
-          
-          {uploadProgress === 0 ? null : (
-            <div className={styles.progress}>
-            
-              <div className={styles['progress-bar']}
-              style={{ width: `${uploadProgress}%`}}
-              >
-                {uploadProgress < 100 ? `Uploading ${uploadProgress}` : `Upload Complete ${uploadProgress}`}
-              </div>
-            </div>
-          )}
-
-
-            <input 
-              type="file" 
-              accept="image/*" 
-              placeholder="Product Image" 
-              name="image" 
-              onChange={(e) => handleImageChange(e)} 
+              onChange={(e) => handleInputChange(e)}
             />
 
-            {product.imageURL === "" ? null : (
-              <input 
-                type="text" 
-                required 
-                placeholder='Image URL'
-                name="imageURL" 
-                disabled 
-                value={product.imageURL}
-              />
-            )}
-        </Card>
+            <label>Product Image:</label>
+            <Card cardClass={styles.group}>
+              {uploadProgress === 0 ? null : (
+                <div className={styles.progress}>
+                  <div
+                    className={styles["progress-bar"]}
+                    style={{ width: `${uploadProgress}%` }}
+                  >
+                    {uploadProgress < 100
+                      ? `Uploading ${uploadProgress}`
+                      : `Upload Complete ${uploadProgress}`}
+                  </div>
+                </div>
+              )}
 
-            <input 
-              type="number" 
-              placeholder="Product Price" 
-              required 
-              name="price" 
+              <input
+                type="file"
+                accept="image/*"
+                placeholder="Product Image"
+                name="image"
+                onChange={(e) => handleImageChange(e)}
+              />
+
+              {product.imageURL === "" ? null : (
+                <input
+                  type="text"
+                  required
+                  placeholder="Image URL"
+                  name="imageURL"
+                  disabled
+                  value={product.imageURL}
+                />
+              )}
+            </Card>
+
+            <input
+              type="number"
+              placeholder="Product Price"
+              required
+              name="price"
               value={product.price}
               onChange={(e) => handleInputChange(e)}
             />
 
             <label>Product Category:</label>
-            <select required name="category" value={product.category} onChange={(e) => handleInputChange(e)}>
+            <select
+              required
+              name="category"
+              value={product.category}
+              onChange={(e) => handleInputChange(e)}
+            >
               <option value="" disabled>
                 -- Choose Product Category --
               </option>
               {categories.map((cat) => {
-                return(
+                return (
                   <option key={cat.id} value={cat.name}>
                     {cat.name}
                   </option>
-                )
+                );
               })}
             </select>
-            
+
             <label> Product Company/Brand:</label>
-            <input 
+            <input
               type="text"
-              placeholder='Product Brand'
+              placeholder="Product Brand"
               required
               name="brand"
               value={product.brand}
@@ -222,14 +232,23 @@ const AddProduct = () => {
             />
 
             <label>Product Description</label>
-            <textarea name="desc" required value={product.desc} onChange={(e) => handleInputChange(e)} cols="30" rows="10"></textarea>
+            <textarea
+              name="desc"
+              required
+              value={product.desc}
+              onChange={(e) => handleInputChange(e)}
+              cols="30"
+              rows="10"
+            ></textarea>
 
-            <button className='--btn --btn-primary'>{detectForm(id, "Save Product", "Edit Button")}</button>
-        </Card>
-      </form>
-    </div>
+            <button className="--btn --btn-primary">
+              {detectForm(id, "Save Product", "Edit Button")}
+            </button>
+          </Card>
+        </form>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default AddProduct;

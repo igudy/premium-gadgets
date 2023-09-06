@@ -1,11 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Card from '../../cards/Card';
-import styles from './ProductItem.module.scss';
-import { useDispatch } from 'react-redux';
-import { ADD_TO_CART, CALCULATE_TOTAL_QUANTITY } from '../../../redux/slice/cartSlice';
+import React from "react";
+import { Link } from "react-router-dom";
+import Card from "../../cards/Card";
+import styles from "./ProductItem.module.scss";
+import { useDispatch } from "react-redux";
+import {
+  ADD_TO_CART,
+  CALCULATE_TOTAL_QUANTITY,
+} from "../../../redux/slice/cartSlice";
 
-const ProductItem = ({product, grid, id, name, price, desc, imageURL}) => {
+const ProductItem = ({ product, grid, id, name, price, desc, imageURL }) => {
   const dispatch = useDispatch();
 
   const shortenText = (text, n) => {
@@ -25,23 +28,25 @@ const ProductItem = ({product, grid, id, name, price, desc, imageURL}) => {
     <Card cardClass={grid ? `${styles.grid}` : `${styles.list}`}>
       <Link to={`/product-details/${id}`}>
         <div className={styles.img}>
-          <img src={imageURL} alt={name}/>
+          <img src={imageURL} alt={name} />
         </div>
       </Link>
 
       <div className={styles.content}>
         <div className={styles.details}>
-          <p>{`$${price}`}</p>
+          <p>{`₦${price}`}</p>
           <h4>{shortenText(name, 18)}</h4>
         </div>
-      {!grid && <p className={styles.desc}>{shortenText(desc, 300)}</p>}
+        {!grid && <p className={styles.desc}>{shortenText(desc, 300)}</p>}
         <button
           className="--btn --btn-danger"
           onClick={() => addToCart(product)}
-        >Add To Cart</button>
+        >
+          Add To Cart
+        </button>
       </div>
     </Card>
-  )
-}
+  );
+};
 
 export default ProductItem;

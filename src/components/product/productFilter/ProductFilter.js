@@ -12,6 +12,9 @@ import {
 } from "../../../redux/slice/productSlice";
 import styles from "./ProductFilter.module.scss";
 
+import { useTranslation } from "react-i18next";
+import i18n from "i18next";
+
 const ProductFilter = () => {
   const [category, setCategory] = useState("All");
   const [brand, setBrand] = useState("All");
@@ -21,6 +24,12 @@ const ProductFilter = () => {
   const maxPrice = useSelector(selectMaxPrice);
 
   const dispatch = useDispatch();
+
+  // Language change
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+  const { t } = useTranslation();
 
   const allCategories = [
     "All",
@@ -52,7 +61,7 @@ const ProductFilter = () => {
 
   return (
     <div className={styles.filter}>
-      <h4>Categories</h4>
+      <h4>{t("categories")}</h4>
       <div className={styles.category}>
         {allCategories.map((cat, index) => {
           return (
@@ -67,7 +76,7 @@ const ProductFilter = () => {
           );
         })}
       </div>
-      <h4>Brand</h4>
+      <h4>{t("brand")}</h4>
       <div className={styles.brand}>
         <select value={brand} onChange={(e) => setBrand(e.target.value)}>
           {allBrands.map((brand, index) => {
@@ -78,8 +87,8 @@ const ProductFilter = () => {
             );
           })}
         </select>
-        <h4>Price</h4>
-        <p>{`$${price}`}</p>
+        <h4>{t("price")}</h4>
+        <p>{`₦${price}`}</p>
         <div className={styles.price}>
           <input
             type="range"

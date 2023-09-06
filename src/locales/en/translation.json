@@ -4,5 +4,11 @@
   "welcome": "Welcome to Premium Gadgets",
   "upto-30%": "Up to 30% off on all on-sale products.",
   "orders": "My Orders",
-  "contact-us": "Contact Us"
+  "contact-us": "Contact Us",
+
+  "categories": "Categories",
+  "brand": "Brand",
+  "price": "Price",
+
+  "products-found": "Proudcts Found"
 }
