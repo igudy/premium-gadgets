@@ -23,6 +23,8 @@ import {
   selectCartTotalQuantity,
 } from "../../redux/slice/cartSlice";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import i18n from "i18next";
 
 const logo = (
   <div className={styles.logo}>
@@ -41,6 +43,12 @@ const Header = () => {
   const [displayName, setDisplayName] = useState("");
   const [scrollPage, setScrollPage] = useState(false);
   const cartTotalQuantity = useSelector(selectCartTotalQuantity);
+
+  // Language change
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+  const { t } = useTranslation();
 
   useEffect(() => {
     dispatch(CALCULATE_TOTAL_QUANTITY);
@@ -141,16 +149,16 @@ const Header = () => {
             <AdminOnlyLink>
               <li>
                 <button className="--btn --btn-primary">
-                  <NavLink to="/admin/home">Admin</NavLink>
+                  <NavLink to="/admin/home">{t("admin")}</NavLink>
                 </button>
               </li>
             </AdminOnlyLink>
 
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">{t("home")}</NavLink>
             </li>
             <li>
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/contact">{t("contact-us")}</Link>
             </li>
           </ul>
           <div className={styles["header-right"]} onClick={hideMenu}>
@@ -162,13 +170,13 @@ const Header = () => {
               </ShowOnLogout>
               <a href="#home" style={{ color: "#ff7722" }}>
                 <FaUserCircle size={16} />
-                Hi, {displayName}
+                {displayName}
               </a>
               {/* <NavLink to="/register" className={activeLink}>
                 Register
               </NavLink> */}
               <NavLink to="/order-history" className={activeLink}>
-                My Orders
+                {t("orders")}
               </NavLink>
               <ShowOnLogin>
                 <NavLink to="/" onClick={logoutUser}>

@@ -17,7 +17,7 @@ const Slider = () => {
         <img src="https://i.ibb.co/CBGRLhG/bg-4.jpg" alt="gadgets" />
         <div className="content">
           <h2>{t("welcome")}</h2>
-          <p>Up to 30% off on all onsale proucts.</p>
+          <p>{t("upto-30%")}</p>
           <hr />
           <div className="language-background">
             <div className="language">
