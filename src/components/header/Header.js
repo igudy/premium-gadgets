@@ -8,20 +8,27 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebase/config";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { SET_ACTIVE_USER, REMOVE_ACTIVE_USER } from "../../redux/slice/authSlice";
+import {
+  SET_ACTIVE_USER,
+  REMOVE_ACTIVE_USER,
+} from "../../redux/slice/authSlice";
 // ShowOnLogin and ShowOnLogout
-import ShowOnLogin, {ShowOnLogout } from "../hiddenLinks/hiddenLinks";
+import ShowOnLogin, { ShowOnLogout } from "../hiddenLinks/hiddenLinks";
 // Show admin if admin is logged in
-import AdminOnlyroute, { AdminOnlyLink } from "../adminOnlyRoute/AdminOnlyroute";
-import { CALCULATE_TOTAL_QUANTITY, selectCartTotalQuantity } from "../../redux/slice/cartSlice";
-import { useSelector } from 'react-redux';
-
+import AdminOnlyroute, {
+  AdminOnlyLink,
+} from "../adminOnlyRoute/AdminOnlyroute";
+import {
+  CALCULATE_TOTAL_QUANTITY,
+  selectCartTotalQuantity,
+} from "../../redux/slice/cartSlice";
+import { useSelector } from "react-redux";
 
 const logo = (
   <div className={styles.logo}>
     <Link to="/">
       <h2>
-        iG<span>Shop</span>.
+        Premium<span>Gadgets</span>.
       </h2>
     </Link>
   </div>
@@ -31,59 +38,59 @@ const Header = () => {
   // Navigate
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
-  const [displayName, setDisplayName] = useState('');
+  const [displayName, setDisplayName] = useState("");
   const [scrollPage, setScrollPage] = useState(false);
   const cartTotalQuantity = useSelector(selectCartTotalQuantity);
 
   useEffect(() => {
-    dispatch(CALCULATE_TOTAL_QUANTITY)
+    dispatch(CALCULATE_TOTAL_QUANTITY);
   }, []);
 
-const cart = (
-  <span className={styles.cart}>
-    <Link to="/cart">
-      <FaShoppingCart size={20} />
-      <p className="p-cart">{cartTotalQuantity}</p>
-    </Link>
-  </span>
-);
+  const cart = (
+    <span className={styles.cart}>
+      <Link to="/cart">
+        <FaShoppingCart size={20} />
+        <p className="p-cart">{cartTotalQuantity}</p>
+      </Link>
+    </span>
+  );
 
-// Dispatching redux action
-const dispatch = useDispatch();
+  // Dispatching redux action
+  const dispatch = useDispatch();
 
-const fixNavbar = () => {
-  if (window.scrollY > 50) {
-    setScrollPage(true);
-  } else {
-    setScrollPage(false);
-  }
-};
-window.addEventListener("scroll", fixNavbar);
-
-// Monitor currently sign in user
-useEffect(() => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      if (user.displayName == null) {
-        const u1 = user.email.substring(0, user.email.indexOf("@"));
-        const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
-        setDisplayName(uName);
-      } else {
-        setDisplayName(user.displayName);
-      }
-      dispatch(
-        SET_ACTIVE_USER({
-          email: user.email,
-          userName: user.displayName ? user.displayName : displayName,
-          userID: user.uid,
-        })
-      );
+  const fixNavbar = () => {
+    if (window.scrollY > 50) {
+      setScrollPage(true);
     } else {
-      setDisplayName("");
-      dispatch(REMOVE_ACTIVE_USER());
+      setScrollPage(false);
     }
-  });
-}, [dispatch, displayName]);
+  };
+  window.addEventListener("scroll", fixNavbar);
+
+  // Monitor currently sign in user
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        if (user.displayName == null) {
+          const u1 = user.email.substring(0, user.email.indexOf("@"));
+          const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
+          setDisplayName(uName);
+        } else {
+          setDisplayName(user.displayName);
+        }
+        dispatch(
+          SET_ACTIVE_USER({
+            email: user.email,
+            userName: user.displayName ? user.displayName : displayName,
+            userID: user.uid,
+          })
+        );
+      } else {
+        setDisplayName("");
+        dispatch(REMOVE_ACTIVE_USER());
+      }
+    });
+  }, [dispatch, displayName]);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -96,13 +103,15 @@ useEffect(() => {
   const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
 
   const logoutUser = () => {
-    signOut(auth).then(() => {
-      toast.success("Logout successfully");
-      navigate('/login');
-    }).catch((error) => {
-      toast.error(error.message);
-    });
-  }
+    signOut(auth)
+      .then(() => {
+        toast.success("Logout successfully");
+        navigate("/login");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   return (
     <header className={scrollPage ? `${styles.fixed}` : null}>
@@ -130,19 +139,15 @@ useEffect(() => {
             </li>
 
             <AdminOnlyLink>
-            <li>
-              <button className="--btn --btn-primary">
-                <NavLink to="/admin/home">
-                  Admin
-                </NavLink>
-              </button>
-            </li>
+              <li>
+                <button className="--btn --btn-primary">
+                  <NavLink to="/admin/home">Admin</NavLink>
+                </button>
+              </li>
             </AdminOnlyLink>
 
             <li>
-              <NavLink to="/">
-                Home
-              </NavLink>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
               <Link to="/contact">Contact Us</Link>
@@ -151,13 +156,13 @@ useEffect(() => {
           <div className={styles["header-right"]} onClick={hideMenu}>
             <span className={styles.links}>
               <ShowOnLogout>
-              <NavLink to="/login" className={activeLink}>
-                Login
-              </NavLink>
+                <NavLink to="/login" className={activeLink}>
+                  Login
+                </NavLink>
               </ShowOnLogout>
-              <a href="#home" style={{color: "#ff7722"}}>
+              <a href="#home" style={{ color: "#ff7722" }}>
                 <FaUserCircle size={16} />
-                Hi, { displayName }
+                Hi, {displayName}
               </a>
               {/* <NavLink to="/register" className={activeLink}>
                 Register
@@ -166,10 +171,9 @@ useEffect(() => {
                 My Orders
               </NavLink>
               <ShowOnLogin>
-              <NavLink to="/" onClick={logoutUser}>
-                Logout
-              </NavLink>
-
+                <NavLink to="/" onClick={logoutUser}>
+                  Logout
+                </NavLink>
               </ShowOnLogin>
             </span>
             {cart}

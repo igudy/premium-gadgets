@@ -1,66 +1,36 @@
-import { useState, useEffect } from 'react';
-import { sliderData } from './Slider-data';
-import './Slider.scss';
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import React from "react";
+import "./Slider.scss";
+import { useTranslation } from "react-i18next";
+import i18n from "i18next";
 
 const Slider = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const slideLength = sliderData.length;
-    console.log(slideLength);
-
-    const autoScroll = true;
-    let slideInterval;
-    let intervalTime = 5000;
-
-    const nextSlide = () => {
-        setCurrentSlide(currentSlide === slideLength - 1 ? 0 :  currentSlide + 1)
-    }
-
-    const prevSlide = () => {
-        setCurrentSlide(currentSlide === 0 ? slideLength - 1  : currentSlide - 1)
-    }
-
-    useEffect(() => {
-        setCurrentSlide(0)
-    }, [])
-
-    // Auto scroll functionality
-    useEffect(() => {
-    if(autoScroll){
-        function auto(){
-            slideInterval = setInterval(nextSlide, intervalTime);
-            }
-            auto();
-        }
-        return() => clearInterval(slideInterval);
-    }, [currentSlide, slideInterval, autoScroll]);
-
+  // Language change
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+  const { t } = useTranslation();
   return (
-    <div className='slider'>
-    <AiOutlineArrowLeft className="arrow-prev" onClick={prevSlide}/>
-    <AiOutlineArrowRight className="arrow-next" onClick={nextSlide} />
-
-    {sliderData.map((slide, index)=> {
-        const {image, heading, desc} = slide;
-        return (
-            <div key={index} className={index === currentSlide ? "slide current" : "slide"}>
-                
-            {index === currentSlide && (
-                <>
-                    <img src={image} alt="slide"/>
-                    <div className="content">
-                        <h2>{heading}</h2>
-                        <p>{desc}</p>
-                        <hr/>
-                        <a href='product' className='"--btn--btn-primary'>
-                            Shop Now
-                        </a>
-                    </div>
-                </>
-            )}
+    <div className="slider">
+      <div className="arrow-prev"></div>
+      <div className="arrow-next"></div>
+      <div className="slide current">
+        <img src="https://i.ibb.co/CBGRLhG/bg-4.jpg" alt="gadgets" />
+        <div className="content">
+          <h2>{t("welcome")}</h2>
+          <p>Up to 30% off on all onsale proucts.</p>
+          <hr />
+          <div className="language-background">
+            <div className="language">
+              <p onClick={() => changeLanguage("en")}>English</p>
+              <p onClick={() => changeLanguage("hausa")}>Hausa</p>
+              <p onClick={() => changeLanguage("igbo")}>Igbo</p>
+              <p onClick={() => changeLanguage("yoruba")}>Yoruba</p>
             </div>
-        )
-    })}
+          </div>
+
+          {/* End of internalization */}
+        </div>
+      </div>
     </div>
   );
 };
