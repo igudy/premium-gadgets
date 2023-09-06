@@ -14,7 +14,7 @@ const Slider = () => {
       <div className="arrow-prev"></div>
       <div className="arrow-next"></div>
       <div className="slide current">
-        <img src="https://i.ibb.co/CBGRLhG/bg-4.jpg" alt="gadgets" />
+        <img src="https://i.ibb.co/H2FRmtV/bg-3.jpg" alt="gadgets" />
         <div className="content">
           <h2>{t("welcome")}</h2>
           <p>{t("upto-30%")}</p>
