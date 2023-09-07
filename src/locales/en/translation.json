@@ -45,5 +45,14 @@
   "reset-password": "Reset Password",
   "login-google": "Login with Google",
   "no-account": "Don't have an account",
-  "or": "or"
+  "or": "or",
+
+  "order-history": "Your Order History",
+  "open-order": "Open an order to leave a",
+  "product-review": "Product Review",
+  "no-order": "No order found",
+  "date": "Date",
+  "order-id": "Order ID",
+  "order-amount": "Order Amount",
+  "order-status": "Order Status"
 }

@@ -44,5 +44,14 @@
   "reset-password": "Tun Ọrọigbaniwọle to",
   "login-google": "Buwolu wọle pẹlu Google",
   "no-account": "Maṣe ni akọọlẹ kan?",
-  "or": "tabi"
+  "or": "tabi",
+
+  "order-history": "Itan ibere rẹ",
+  "open-order": "Ṣii aṣẹ lati lọ kuro ni a",
+  "product-review": "Atunwo ọja",
+  "no-order": "Ko si ibere ri",
+  "date": "Ọjọ",
+  "order-id": "Paṣẹ ID",
+  "order-amount": "Iye ibere",
+  "order-status": "Ipo ibere"
 }

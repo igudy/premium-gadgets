@@ -21,7 +21,9 @@ const Slider = () => {
           <hr />
           <div className="language-background">
             <div className="language">
-              <p onClick={() => changeLanguage("en")}>English</p>
+              <div>
+                <p onClick={() => changeLanguage("en")}>English</p>
+              </div>
               <p onClick={() => changeLanguage("hausa")}>Hausa</p>
               <p onClick={() => changeLanguage("igbo")}>Igbo</p>
               <p onClick={() => changeLanguage("yoruba")}>Yoruba</p>

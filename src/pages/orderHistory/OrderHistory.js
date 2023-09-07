@@ -6,6 +6,7 @@ import useFetchCollection from "../../customHooks/useFetchCollection";
 import { selectUserID } from "../../redux/slice/authSlice";
 import { selectOrderHistory, STORE_ORDERS } from "../../redux/slice/orderSlice";
 import styles from "./OrderHistory.module.scss";
+import { useTranslation } from "react-i18next";
 
 const OrderHistory = () => {
   const { data, isLoading } = useFetchCollection("orders");
@@ -25,28 +26,31 @@ const OrderHistory = () => {
 
   const filteredOrders = orders.filter((order) => order.userID === userID);
 
+  const { t } = useTranslation();
+
   return (
     <section>
       <div className={`container ${styles.order}`}>
-        <h2>Your Order History</h2>
+        <h2>{t("order-history")}</h2>
         <p>
-          Open an order to leave a <b>Product Review</b>
+          {t("open-order")}
+          <b style={{ margin: "4px" }}>{t("product-review")}</b>
         </p>
         <br />
         <>
           {isLoading && <Loader />}
           <div className={styles.table}>
             {filteredOrders.length === 0 ? (
-              <p>No order found</p>
+              <p>{t("product-review")}</p>
             ) : (
               <table>
                 <thead>
                   <tr>
                     <th>s/n</th>
-                    <th>Date</th>
-                    <th>Order ID</th>
-                    <th>Order Amount</th>
-                    <th>Order Status</th>
+                    <th>{t("date")}</th>
+                    <th>{t("order-id")}</th>
+                    <th>{t("order-amount")}</th>
+                    <th>{t("order-status")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -66,7 +70,7 @@ const OrderHistory = () => {
                         </td>
                         <td>{id}</td>
                         <td>
-                          {"$"}
+                          {"₦"}
                           {orderAmount}
                         </td>
                         <td>

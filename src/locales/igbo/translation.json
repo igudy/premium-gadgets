@@ -44,5 +44,14 @@
   "reset-password": "Tọgharia okwuntughe",
   "login-google": "Jiri Google banye",
   "no-account": "Enweghị akaụntụ?",
-  "or": "ma ọ bụ"
+  "or": "ma ọ bụ",
+
+  "order-history": "Akụkọ nke ịtụ gị",
+  "open-order": "Mepee iwu ịhapụ a",
+  "product-review": "Nyochaa ngwaahịa",
+  "no-order": "Ọnweghị iwu ahụrụ",
+  "date": "Ụbọchị",
+  "order-id": "Nye iwu ID",
+  "order-amount": "Ọnụ ego ịtụ",
+  "order-status": "Ọnọdụ ịtụ"
 }

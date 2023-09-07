@@ -44,5 +44,14 @@
   "reset-password": "Sake saita kalmar wucewa",
   "login-google": "Shiga tare da Google",
   "no-account": "Ba ku da asusun ajiya?",
-  "or": "ko"
+  "or": "ko",
+
+  "order-history": "Tarihin odar ku",
+  "open-order": "Bude oda don barin a",
+  "product-review": "Binciken Samfur",
+  "no-order": "Ba a sami oda ba",
+  "date": "Kwanan wata",
+  "order-id": "Oda ID",
+  "order-amount": "Adadin oda",
+  "order-status": "Matsayin oda"
 }
