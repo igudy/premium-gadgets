@@ -1,13 +1,37 @@
+// .footer {
+//     background-color: var(--dark-blue);
+//     color: #fff;
+//     font-size: 1.6rem;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 8rem;
+//     p {
+//       color: #fff;
+//     }
+// }
+
+
 .footer {
-    background-color: var(--dark-blue);
+  background-color: var(--dark-blue);
+  color: #fff;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  p {
     color: #fff;
-    font-size: 1.6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 8rem;
-    p {
-      color: #fff;
-    }
   }
-  
+}
+
+/* This CSS ensures the footer stays at the bottom of the content */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 40vh;
+}
+
+.content {
+  flex-grow: 1;
+}
