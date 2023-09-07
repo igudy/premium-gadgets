@@ -40,5 +40,9 @@
   "password": "Kalmar wucewa",
   "confirm-password": "Tabbata kalmar shiga",
   "already-account": "Kuna da asusu?",
-  "login": "Shiga"
+  "login": "Shiga",
+  "reset-password": "Sake saita kalmar wucewa",
+  "login-google": "Shiga tare da Google",
+  "no-account": "Ba ku da asusun ajiya?",
+  "or": "ko"
 }

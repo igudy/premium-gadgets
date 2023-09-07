@@ -42,5 +42,8 @@
   "confirm-password": "Confirm password",
   "already-account": "Already have an account?",
   "login": "Login",
-  "reset-password": "Reset Password"
+  "reset-password": "Reset Password",
+  "login-google": "Login with Google",
+  "no-account": "Don't have an account",
+  "or": "or"
 }

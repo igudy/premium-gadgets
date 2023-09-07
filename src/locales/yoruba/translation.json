@@ -38,7 +38,11 @@
 
   "register": "Forukọsilẹ",
   "password": "Ọrọigbaniwọle",
-  "confirm-password": "CSo ni pato orukoabawole re",
+  "confirm-password": "So ni pato orukoabawole re",
   "already-account": "Ti ni iroyin tẹlẹ?",
-  "login": "Wo ile"
+  "login": "Wo ile",
+  "reset-password": "Tun Ọrọigbaniwọle to",
+  "login-google": "Buwolu wọle pẹlu Google",
+  "no-account": "Maṣe ni akọọlẹ kan?",
+  "or": "tabi"
 }

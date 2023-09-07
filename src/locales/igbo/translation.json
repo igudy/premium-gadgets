@@ -40,5 +40,9 @@
   "password": "Okwuntughe",
   "confirm-password": "Kwenye Na Okwuntughe",
   "already-account": "Ị nwere akaụntụ?",
-  "login": "Banye"
+  "login": "Banye",
+  "reset-password": "Tọgharia okwuntughe",
+  "login-google": "Jiri Google banye",
+  "no-account": "Enweghị akaụntụ?",
+  "or": "ma ọ bụ"
 }

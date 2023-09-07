@@ -15,6 +15,8 @@ import Loader from "../../components/loader/Loader";
 import { useSelector } from "react-redux";
 import { selectPreviousURL } from "../../redux/slice/cartSlice";
 
+import { useTranslation } from "react-i18next";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -61,6 +63,8 @@ const Login = () => {
       });
   };
 
+  const { t } = useTranslation();
+
   return (
     <>
       {isLoading && <Loader />}
@@ -71,28 +75,28 @@ const Login = () => {
 
         <Card>
           <div className={styles.form}>
-            <h2>Login</h2>
+            <h2>{t("login")}</h2>
 
             <form onSubmit={loginUser}>
               <input
                 type="text"
-                placeholder="Email"
+                placeholder={t("email")}
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
                 type="password"
-                placeholder="Password"
+                placeholder={t("password")}
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button type="submit" className="--btn --btn-primary --btn-block">
-                Login
+                {t("login")}
               </button>
               <div className={styles.links}>
-                <Link to="/reset">Reset Password</Link>
+                <Link to="/reset">{t("reset-password")}</Link>
               </div>
               <p>-- or --</p>
             </form>
@@ -100,11 +104,11 @@ const Login = () => {
               className="--btn --btn-danger --btn-block"
               onClick={signInWithGoogle}
             >
-              <FaGoogle color="#fff" /> Login With Google
+              <FaGoogle color="#fff" /> {t("login-google")}
             </button>
             <span className={styles.register}>
-              <p>Don't have an account?</p>
-              <Link to="/register">Register</Link>
+              <p>{t("no-account")}</p>
+              <Link to="/register">{t("register")}</Link>
             </span>
           </div>
         </Card>

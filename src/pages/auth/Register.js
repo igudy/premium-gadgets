@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styles from "./auth.module.scss";
 import RegisterImg from "../../assests/register.png";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Card from "../../components/cards/Card";
 
 // React toastify for notification
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Creating users
