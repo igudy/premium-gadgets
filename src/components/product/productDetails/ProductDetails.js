@@ -99,7 +99,7 @@ const ProductDetails = () => {
                   className="--btn --btn-danger"
                   onClick={() => addToCart(product)}
                 >
-                  ADD TO CART
+                  {t("add-to-cart")}
                 </button>
               </div>
             </div>

@@ -7,6 +7,7 @@ import {
   ADD_TO_CART,
   CALCULATE_TOTAL_QUANTITY,
 } from "../../../redux/slice/cartSlice";
+import { useTranslation } from "react-i18next";
 
 const ProductItem = ({ product, grid, id, name, price, desc, imageURL }) => {
   const dispatch = useDispatch();
@@ -23,6 +24,8 @@ const ProductItem = ({ product, grid, id, name, price, desc, imageURL }) => {
     dispatch(ADD_TO_CART(product));
     dispatch(CALCULATE_TOTAL_QUANTITY());
   };
+
+  const { t } = useTranslation();
 
   return (
     <Card cardClass={grid ? `${styles.grid}` : `${styles.list}`}>
@@ -42,7 +45,7 @@ const ProductItem = ({ product, grid, id, name, price, desc, imageURL }) => {
           className="--btn --btn-danger"
           onClick={() => addToCart(product)}
         >
-          Add To Cart
+          {t("add-to-cart")}
         </button>
       </div>
     </Card>

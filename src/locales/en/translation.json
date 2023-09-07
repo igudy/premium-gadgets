@@ -33,5 +33,7 @@
   "product-details": "Product Details",
   "back-to-products": "Back to Products",
   "product-reviews": "Product Reviews",
-  "no-review": "There are no reviews for this product yet."
+  "no-review": "There are no reviews for this product yet.",
+
+  "add-to-cart": "Add To Cart"
 }
