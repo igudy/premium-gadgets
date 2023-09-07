@@ -54,5 +54,17 @@
   "date": "Date",
   "order-id": "Order ID",
   "order-amount": "Order Amount",
-  "order-status": "Order Status"
+  "order-status": "Order Status",
+
+  "shopping-cart": "Shopping Cart",
+  "empty-cart": "Your cart is currently empty",
+  "continue-shopping": "Continue Shopping",
+  "product": "Product",
+  "quantity": "Quantity",
+  "total": "Total",
+  "action": "Action",
+  "clear-cart": "Clear Cart",
+  "subtotal": "Subtotal",
+  "shipping-calculated": "Tax and shipping are calculated at checkout",
+  "checkout": "Checkout"
 }

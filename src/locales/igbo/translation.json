@@ -53,5 +53,17 @@
   "date": "Ụbọchị",
   "order-id": "Nye iwu ID",
   "order-amount": "Ọnụ ego ịtụ",
-  "order-status": "Ọnọdụ ịtụ"
+  "order-status": "Ọnọdụ ịtụ",
+
+  "shopping-cart": "Ụgbọ ibu azụmahịa",
+  "empty-cart": "Ụgbọ ala gị efu ugbu a",
+  "continue-shopping": "Gaa n'ihu ịzụ ahịa",
+  "product": "Ngwaahịa",
+  "quantity": "Ọnụọgụ",
+  "total": "Mkpokọta",
+  "action": "Omume",
+  "clear-cart": "Kpochapụ ụgbọ ibu",
+  "subtotal": "Mkpokọta",
+  "shipping-calculated": "A na-agbakọ ụtụ isi na mbupu na ndenye ọpụpụ",
+  "checkout": "Lelee"
 }

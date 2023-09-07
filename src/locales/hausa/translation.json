@@ -53,5 +53,17 @@
   "date": "Kwanan wata",
   "order-id": "Oda ID",
   "order-amount": "Adadin oda",
-  "order-status": "Matsayin oda"
+  "order-status": "Matsayin oda",
+
+  "shopping-cart": "Katin Siyayya",
+  "empty-cart": "Kwandon ku a halin yanzu babu kowa",
+  "continue-shopping": "Ci gaba da Siyayya",
+  "product": "Samfura",
+  "quantity": "Yawan",
+  "total": "Jimlar",
+  "action": "Aiki",
+  "clear-cart": "Clear Cart",
+  "subtotal": "Ƙarfafawa",
+  "shipping-calculated": "Ana ƙididdige haraji da jigilar kaya a wurin biya",
+  "checkout": "Dubawa"
 }

@@ -53,5 +53,17 @@
   "date": "Ọjọ",
   "order-id": "Paṣẹ ID",
   "order-amount": "Iye ibere",
-  "order-status": "Ipo ibere"
+  "order-status": "Ipo ibere",
+
+  "shopping-cart": "ỤOhun tio wa fun rira",
+  "empty-cart": "ỤKẹkẹkẹ rẹ ti ṣofo lọwọlọwọ",
+  "continue-shopping": "Tesiwaju rira",
+  "product": "Ọja",
+  "quantity": "Opoiye",
+  "total": "Lapapọ",
+  "action": "Iṣe",
+  "clear-cart": "Ko Cart",
+  "subtotal": "Lapapọ",
+  "shipping-calculated": "Owo-ori ati sowo ti wa ni iṣiro ni ibi isanwo",
+  "checkout": "Ṣayẹwo"
 }
