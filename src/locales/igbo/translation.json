@@ -34,5 +34,11 @@
   "product-reviews": "Ngwaahịa Reviews",
   "no-review": "Enweghị nyocha maka ngwaahịa a.",
 
-  "add-to-cart": "Tinye na ụgbọ ibu"
+  "add-to-cart": "Tinye na ụgbọ ibu",
+
+  "register": "Debanye aha",
+  "password": "Okwuntughe",
+  "confirm-password": "Kwenye Na Okwuntughe",
+  "already-account": "Ị nwere akaụntụ?",
+  "login": "Banye"
 }

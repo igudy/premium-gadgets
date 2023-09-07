@@ -35,5 +35,12 @@
   "product-reviews": "Product Reviews",
   "no-review": "There are no reviews for this product yet.",
 
-  "add-to-cart": "Add To Cart"
+  "add-to-cart": "Add To Cart",
+
+  "register": "Register",
+  "password": "Password",
+  "confirm-password": "Confirm password",
+  "already-account": "Already have an account?",
+  "login": "Login",
+  "reset-password": "Reset Password"
 }

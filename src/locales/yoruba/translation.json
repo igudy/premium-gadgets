@@ -34,5 +34,11 @@
   "product-reviews": "Oja Reviews",
   "no-review": "Ko si awọn atunwo fun ọja yii sibẹsibẹ.",
 
-  "add-to-cart": "Fi kun Awon nkan ti o nra"
+  "add-to-cart": "Fi kun Awon nkan ti o nra",
+
+  "register": "Forukọsilẹ",
+  "password": "Ọrọigbaniwọle",
+  "confirm-password": "CSo ni pato orukoabawole re",
+  "already-account": "Ti ni iroyin tẹlẹ?",
+  "login": "Wo ile"
 }

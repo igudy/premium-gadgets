@@ -34,5 +34,11 @@
   "product-reviews": "Sharhin Samfura",
   "no-review": "Babu sake dubawa na wannan samfurin tukuna.",
 
-  "add-to-cart": "Ƙara Zuwa Wasikar"
+  "add-to-cart": "Ƙara Zuwa Wasikar",
+
+  "register": "Yi rijista",
+  "password": "Kalmar wucewa",
+  "confirm-password": "Tabbata kalmar shiga",
+  "already-account": "Kuna da asusu?",
+  "login": "Shiga"
 }
