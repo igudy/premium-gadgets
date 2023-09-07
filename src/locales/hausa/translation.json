@@ -2,6 +2,7 @@
   "admin": "Admin",
   "home": "Gida",
   "welcome": "Barka da zuwa Premium Gadgets!",
+
   "upto-30%": "Har zuwa 30% akan duk samfuran siyarwa.",
   "orders": "Umarnina",
   "contact-us": "Contact Us",
@@ -10,5 +11,26 @@
   "brand": "Alamar",
   "price": "Farashin",
 
-  "products-found": "Kayayyakin Da Aka Samu"
+  "products-found": "Kayayyakin Da Aka Samu",
+  "sort-by": "Kasa:",
+  "latest": "Bugawa",
+  "lowest-price": "Farashin mafi ƙasƙanci",
+  "highest-price": "Farashin mafi girma",
+  "a-z": "A - Z",
+  "z-a": "Z - A",
+
+  "name": "Suna",
+  "email": "Imel",
+  "subject": "Magana",
+  "message": "Sako",
+  "contactUs": "Bayanin Tuntuɓar Mu",
+  "contactus-fill": "Cika fom ko tuntube mu ta wasu tashoshi da aka jera a kasa",
+  "send-message": "Aika Saƙo",
+  "number": "Lamba",
+  "country": "Kasar",
+
+  "product-details": "Cikakken Bayani",
+  "back-to-products": "Komawa ga cikakkun bayanai",
+  "product-reviews": "Sharhin Samfura",
+  "no-review": "Babu sake dubawa na wannan samfurin tukuna."
 }

@@ -74,13 +74,13 @@ const ProductList = ({ products }) => {
 
         {/* Sort Products */}
         <div className={styles.sort}>
-          <label>Sort by:</label>
+          <label>{t("sort-by")}</label>
           <select value={sort} onChange={(e) => setSort(e.target.value)}>
-            <option value="latest">Latest</option>
-            <option value="lowest-price">Lowest Price</option>
-            <option value="highest-price">Highest Price</option>
-            <option value="a-z">A - Z</option>
-            <option value="z-a">Z - A</option>
+            <option value="latest">{t("latest")}</option>
+            <option value="lowest-price">{t("lowest-price")}</option>
+            <option value="highest-price">{t("highest-price")}</option>
+            <option value="a-z">{t("a-z")}</option>
+            <option value="z-a">{t("z-a")}</option>
           </select>
         </div>
       </div>

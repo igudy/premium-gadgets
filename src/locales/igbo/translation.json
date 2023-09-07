@@ -2,6 +2,7 @@
   "admin": "Admin",
   "home": "Ụlọ",
   "welcome": "Nnọọ na Ngwa Ngwa",
+
   "upto-30%": "Ihe ruru 30% kwụsịrị na ngwaahịa niile a na-ere ere!",
   "orders": "Iwu m",
   "contact-us": "Kpọtụrụ anyị",
@@ -10,5 +11,26 @@
   "brand": "Ụdị",
   "price": "Ọnụ ahịa",
 
-  "products-found": "Achọtara ngwaahịa"
+  "products-found": "Achọtara ngwaahịa",
+  "sort-by": "Hazie site na:",
+  "latest": "Kacha ọhụrụ",
+  "lowest-price": "Ọnụ ego kacha ala",
+  "highest-price": "Ọnụ ahịa kacha elu",
+  "a-z": "A - Z",
+  "z-a": "Z - A",
+
+  "name": "Aha",
+  "email": "Imeeli",
+  "subject": "Isiokwu",
+  "message": "Ozi",
+  "contactUs": "Ozi kọntaktị anyị",
+  "contactus-fill": "Dejupụta fọm ma ọ bụ kpọtụrụ anyị site na ọwa ndị ọzọ edepụtara n'okpuru",
+  "send-message": "Ziga ozi",
+  "number": "Nọmba",
+  "country": "Obodo",
+
+  "product-details": "Nkọwa ngwaahịa",
+  "back-to-products": "Laghachi na Ngwaahịa",
+  "product-reviews": "Ngwaahịa Reviews",
+  "no-review": "Enweghị nyocha maka ngwaahịa a."
 }

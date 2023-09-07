@@ -6,12 +6,15 @@ import { GoLocation } from "react-icons/go";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 
+import { useTranslation } from "react-i18next";
+
 const Contact = () => {
   const form = useRef();
 
+  const { t } = useTranslation();
+
   const sendEmail = (e) => {
     e.preventDefault();
-    // console.log(form.current);
 
     emailjs
       .sendForm(
@@ -34,57 +37,44 @@ const Contact = () => {
   return (
     <section>
       <div className={`container ${styles.contact}`}>
-        <h2>Contact Us</h2>
+        <h2>{t("contact-us")}</h2>
         <div className={styles.section}>
           <form ref={form} onSubmit={sendEmail}>
             <Card cardClass={styles.card}>
-              <label>Name</label>
-              <input
-                type="text"
-                name="user_name"
-                placeholder="Full Name"
-                required
-              />
-              <label>Email</label>
-              <input
-                type="email"
-                name="user_email"
-                placeholder="Your active email"
-                required
-              />
-              <label>Subject</label>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                required
-              />
-              <label>Message</label>
+              <label>{t("name")}</label>
+              <input type="text" name="user_name" placeholder="" required />
+              <label>{t("email")}</label>
+              <input type="email" name="user_email" placeholder="" required />
+              <label>{t("subject")}</label>
+              <input type="text" name="subject" placeholder="" required />
+              <label>{t("message")}</label>
               <textarea name="message" cols="30" rows="10"></textarea>
-              <button className="--btn --btn-primary">Send Message</button>
+              <button className="--btn --btn-primary">
+                {t("send-message")}
+              </button>
             </Card>
           </form>
 
           <div className={styles.details}>
             <Card cardClass={styles.card2}>
-              <h3>Our Contact Information</h3>
-              <p>Fill the form or contact us via other channels listed below</p>
+              <h3>{t("contactUs")}</h3>
+              <p>{t("contactus-fill")}</p>
               <div className={styles.icons}>
                 <span>
                   <FaPhoneAlt />
-                  <p>+234 810 825 1426</p>
+                  <p>{t("number")}</p>
                 </span>
                 <span>
                   <FaEnvelope />
-                  <p>goodnessigunma1@gmail.com</p>
+                  <p>{t("email")}</p>
                 </span>
                 <span>
                   <GoLocation />
-                  <p>Lagos, Nigeria</p>
+                  <p>{t("country")}</p>
                 </span>
                 <span>
                   <FaTwitter />
-                  <p>@iigudy</p>
+                  <p>@Twitter</p>
                 </span>
               </div>
             </Card>

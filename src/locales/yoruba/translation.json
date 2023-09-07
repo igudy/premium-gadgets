@@ -2,6 +2,7 @@
   "admin": "Abojuto",
   "home": "Ile",
   "welcome": "Kaabo si Ere Awọn irinṣẹ",
+
   "upto-30%": "Titi di 30% pipa lori gbogbo awọn ọja tita.",
   "orders": "Awọn aṣẹ Mi",
   "contact-us": "Pe wa",
@@ -10,5 +11,26 @@
   "brand": "Brand",
   "price": "Iye owo",
 
-  "products-found": "Awọn ọja ri"
+  "products-found": "Awọn ọja ri",
+  "sort-by": "Sa pelu:",
+  "latest": "Titun",
+  "lowest-price": "Asuwon ti Owo",
+  "highest-price": "Iye ti o ga julọ",
+  "a-z": "A - Z",
+  "z-a": "Z - A",
+
+  "name": "Oruko",
+  "email": "Email",
+  "subject": "Koko-ọrọ",
+  "message": "Ifiranṣẹ",
+  "contactUs": "Alaye Kan si wa",
+  "contactus-fill": "Fọwọsi fọọmu naa tabi kan si wa nipasẹ awọn ikanni miiran ti a ṣe akojọ si isalẹ",
+  "send-message": "Firanṣẹ Ifiranṣẹ",
+  "number": "Nọmba",
+  "country": "Orilẹ-ede",
+
+  "product-details": "Awọn alaye ọja",
+  "back-to-products": "Pada si Awọn ọja",
+  "product-reviews": "Oja Reviews",
+  "no-review": "Ko si awọn atunwo fun ọja yii sibẹsibẹ."
 }

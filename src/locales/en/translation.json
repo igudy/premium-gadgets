@@ -2,6 +2,7 @@
   "admin": "Admin",
   "home": "Home",
   "welcome": "Welcome to Premium Gadgets",
+
   "upto-30%": "Up to 30% off on all on-sale products.",
   "orders": "My Orders",
   "contact-us": "Contact Us",
@@ -10,5 +11,27 @@
   "brand": "Brand",
   "price": "Price",
 
-  "products-found": "Proudcts Found"
+  "products-found": "Proudcts Found",
+
+  "sort-by": "Sort by:",
+  "latest": "Latest",
+  "lowest-price": "Lowest Price",
+  "highest-price": "Highest Price",
+  "a-z": "A - Z",
+  "z-a": "Z - A",
+
+  "name": "Name",
+  "email": "Email",
+  "subject": "Subject",
+  "message": "Message",
+  "contactUs": "Our Contact Information",
+  "contactus-fill": "Fill the form or contact us via other channels listed below",
+  "send-message": "Send Message",
+  "number": "Number",
+  "country": "Country",
+
+  "product-details": "Product Details",
+  "back-to-products": "Back to Products",
+  "product-reviews": "Product Reviews",
+  "no-review": "There are no reviews for this product yet."
 }

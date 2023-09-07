@@ -16,6 +16,7 @@ import useFetchDocument from "../../../customHooks/useFetchDocument";
 import useFetchCollection from "../../../customHooks/useFetchCollection";
 import Card from "../../cards/Card";
 import StarsRating from "react-star-rate";
+import { useTranslation } from "react-i18next";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -45,12 +46,14 @@ const ProductDetails = () => {
     dispatch(CALCULATE_TOTAL_QUANTITY());
   };
 
+  const { t } = useTranslation();
+
   return (
     <section>
       <div className={`container ${styles.product}`}>
-        <h2>Product Details</h2>
+        <h2>{t("product-details")}</h2>
         <div>
-          <Link to="/#products">&larr; Back To Products</Link>
+          <Link to="/#products">&larr;{t("back-to-products")}</Link>
         </div>
         {product === null ? (
           <img src={spinnerImg} alt="Loading" style={{ width: "50px" }} />
@@ -65,10 +68,10 @@ const ProductDetails = () => {
                 <p className={styles.price}>{`₦${product.price}`}</p>
                 <p>{product.desc}</p>
                 <p>
-                  <b>SKU</b> {product.id}
+                  <b>ID:</b> {product.id}
                 </p>
                 <p>
-                  <b>Brand</b> {product.brand}
+                  <b>Brand:</b> {product.brand}
                 </p>
 
                 <div className={styles.count}>
@@ -103,10 +106,10 @@ const ProductDetails = () => {
           </>
         )}
         <Card cardClass={styles.card}>
-          <h3>Product Reviews</h3>
+          <h3>{t("product-details")}</h3>
           <div>
             {filteredReviews.length === 0 ? (
-              <p>There are no reviews for this product yet.</p>
+              <p>{t("no-review")}</p>
             ) : (
               <>
                 {filteredReviews.map((item, index) => {
