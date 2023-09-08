@@ -83,7 +83,7 @@ const Cart = () => {
                   <th>s/n</th>
                   <th>{t("product")}</th>
                   <th>{t("price")}</th>
-                  <th>{t("qunatity")}</th>
+                  <th>{t("quantity")}</th>
                   <th>{t("total")}</th>
                   <th>{t("action")}</th>
                 </tr>

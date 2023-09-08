@@ -65,5 +65,26 @@
   "clear-cart": "Clear Cart",
   "subtotal": "Ƙarfafawa",
   "shipping-calculated": "Ana ƙididdige haraji da jigilar kaya a wurin biya",
-  "checkout": "Dubawa"
+  "checkout": "Dubawa",
+
+  "checkout-details": "Cikakken Bayani",
+  "shipping": "Adireshin sufuri",
+  "recipient-name": "Sunan mai karɓa",
+  "address-1": "Layin Adireshi 1",
+  "address-2": "Layin Adireshi 2",
+  "city": "Garin",
+  "state": "Jiha",
+  "postal-code": "Lambar gidan waya",
+  "phone": "Waya",
+  "billing-address": "Adireshin Biyan Kuɗi",
+  "proceed-to-checkout": "Ci gaba zuwa wurin biya",
+
+  "checkout-summary": "Takaitaccen Bayani",
+  "no-item": "Babu wani abu a cikin keken ku",
+  "back-shop": "Komawa Siyayya",
+  "unit-price": "Farashin naúrar",
+  "set-price": "Saita Farashi",
+
+  "hide-filter": "Boye Tace",
+  "show-filter": "Nuna Tace"
 }

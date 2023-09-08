@@ -66,5 +66,26 @@
   "clear-cart": "Clear Cart",
   "subtotal": "Subtotal",
   "shipping-calculated": "Tax and shipping are calculated at checkout",
-  "checkout": "Checkout"
+  "checkout": "Checkout",
+
+  "checkout-details": "Checkout Details",
+  "shipping": "Shipping Address",
+  "recipient-name": "Recipient Name",
+  "address-1": "Address Line 1",
+  "address-2": "Address Line 2",
+  "city": "City",
+  "state": "State",
+  "postal-code": "Postal Code",
+  "phone": "Phone",
+  "billing-address": "Billing Address",
+  "proceed-to-checkout": "Proceed To Checkout",
+
+  "checkout-summary": "Checkout Summary",
+  "no-item": "No item in your cart",
+  "back-shop": "Back To Shop",
+  "unit-price": "Unit Price",
+  "set-price": "Set Price",
+
+  "hide-filter": "Hide Filter",
+  "show-filter": "Show Filter"
 }

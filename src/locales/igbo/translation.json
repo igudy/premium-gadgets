@@ -65,5 +65,26 @@
   "clear-cart": "Kpochapụ ụgbọ ibu",
   "subtotal": "Mkpokọta",
   "shipping-calculated": "A na-agbakọ ụtụ isi na mbupu na ndenye ọpụpụ",
-  "checkout": "Lelee"
+  "checkout": "Lelee",
+
+  "checkout-details": "Lelee nkọwa",
+  "shipping": "Adreesị Mbupu",
+  "recipient-name": "Aha nnata",
+  "address-1": "Ahịrị Adreesị 1",
+  "address-2": "Ahịrị adreesị 2",
+  "city": "Obodo",
+  "state": "Steeti",
+  "postal-code": "Koodu Nzipu ozi",
+  "phone": "Ekwentị",
+  "billing-address": "Adreesị Ịgba Ụgwọ",
+  "proceed-to-checkout": "Ci gaba zuwa wurin biya",
+
+  "checkout-summary": "Nchịkọta nlele",
+  "no-item": "Enweghị ihe dị n'ụgbọ gị",
+  "back-shop": "Laghachi azụ ahịa",
+  "unit-price": "Ọnụahịa otu",
+  "set-price": "Tọọ ọnụ ahịa",
+
+  "hide-filter": "Zoo ihe nzacha",
+  "show-filter": "Gosi nzacha"
 }

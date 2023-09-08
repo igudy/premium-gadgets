@@ -11,7 +11,7 @@ import ProductFilter from "./productFilter/ProductFilter";
 import ProductList from "./productList/ProductList";
 import spinnerImg from "../../assests/spinner.jpg";
 import { FaCogs } from "react-icons/fa";
-
+import { useTranslation } from "react-i18next";
 const Product = () => {
   const { data, isLoading } = useFetchCollection("products");
   const [showFilter, setShowFilter] = useState(false);
@@ -35,6 +35,8 @@ const Product = () => {
   const toggleFilter = () => {
     setShowFilter(!showFilter);
   };
+
+  const { t } = useTranslation();
 
   return (
     <section>
@@ -60,7 +62,9 @@ const Product = () => {
           <div className={styles.icon} onClick={toggleFilter}>
             <FaCogs size={20} color="orangered" />
             <p>
-              <b>{showFilter ? "Hide Filter" : "Show Filter"}</b>
+              <b>
+                {showFilter ? `${t("hide-filter")}` : `${t("show-filter")}`}
+              </b>
             </p>
           </div>
         </div>

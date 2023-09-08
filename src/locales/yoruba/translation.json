@@ -65,5 +65,26 @@
   "clear-cart": "Ko Cart",
   "subtotal": "Lapapọ",
   "shipping-calculated": "Owo-ori ati sowo ti wa ni iṣiro ni ibi isanwo",
-  "checkout": "Ṣayẹwo"
+  "checkout": "Ṣayẹwo",
+
+  "checkout-details": "Ṣayẹwo Awọn alaye",
+  "shipping": "Adiresi wo ni a ma gbe wa",
+  "recipient-name": "Orukọ olugba",
+  "address-1": "Laini Adirẹsi 1",
+  "address-2": "Laini adirẹsi 2",
+  "city": "Ilu",
+  "state": "Ìpínlẹ̀",
+  "postal-code": "Koodu ifiweranse",
+  "phone": "Foonu",
+  "billing-address": "Adiresi ibiti agbe nsan owo",
+  "proceed-to-checkout": "Sun mo waju lati sanwo",
+
+  "checkout-summary": "Ṣayẹwo Lakotan",
+  "no-item": "Ko si ohun kan ninu ọkọ rẹ",
+  "back-shop": "Pada Lati Itaja",
+  "unit-price": "Oye eyo kan",
+  "set-price": "Ṣeto Iye",
+
+  "hide-filter": "Tọju Ajọ",
+  "show-filter": "Ṣe afihan Ajọ"
 }
