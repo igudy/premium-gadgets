@@ -19,6 +19,7 @@ const Slider = () => {
           <h2>{t("welcome")}</h2>
           <p>{t("upto-30%")}</p>
           <hr />
+          <p>{t("explore")}</p>
         </div>
       </div>
     </div>

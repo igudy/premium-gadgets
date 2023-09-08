@@ -87,5 +87,12 @@
   "set-price": "Set Price",
 
   "hide-filter": "Hide Filter",
-  "show-filter": "Show Filter"
+  "show-filter": "Show Filter",
+
+  "next": "Next",
+  "prev": "Prev",
+  "of": "Of",
+  "page": "Page",
+
+  "explore": "Explore a wide range of products, from stylish smartphones to high-performance laptops and essential accessories"
 }

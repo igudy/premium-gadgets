@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Pagination.module.scss";
+import i18n from "i18next";
+import { useTranslation } from "react-i18next";
 
 const Pagination = ({
   currentPage,
@@ -7,11 +9,12 @@ const Pagination = ({
   productsPerPage,
   totalProducts,
 }) => {
+  const { t } = useTranslation();
   const pageNumbers = [];
   const totalPages = totalProducts / productsPerPage;
   // Limit the page Numbers shown
   const [pageNumberLimit] = useState(5);
-  const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
+  const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(8);
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
 
   // Paginate
@@ -44,12 +47,14 @@ const Pagination = ({
   }
 
   return (
-    <ul className={styles.pagination}>
+    <ul className={`${styles.pagination} gap-5`}>
       <li
         onClick={paginatePrev}
-        className={currentPage === pageNumbers[0] ? `${styles.hidden}` : null}
+        className={`${
+          currentPage === pageNumbers[0] ? `${styles.hidden}` : null
+        }`}
       >
-        Prev
+        {t("Prev")}
       </li>
 
       {pageNumbers.map((number) => {
@@ -74,12 +79,12 @@ const Pagination = ({
             : null
         }
       >
-        Next
+        {t("Next")}
       </li>
 
       <p>
-        <b className={styles.page}>{`page ${currentPage}`}</b>
-        <span>{` of `}</span>
+        <b className={styles.page}>{`${t("page")} ${currentPage}`}</b>
+        <span className="mx-3"> {t("of")}</span>
         <b>{`${Math.ceil(totalPages)}`}</b>
       </p>
     </ul>
