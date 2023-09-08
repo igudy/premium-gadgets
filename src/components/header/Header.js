@@ -164,7 +164,7 @@ const Header = () => {
             </div>
             <div>
               <a href="#home" className="flex">
-                <FaUserCircle size={16} />
+                <FaUserCircle size={16} className="mr-2 mt-[1px]" />
                 {displayName}
               </a>
             </div>
@@ -176,7 +176,7 @@ const Header = () => {
             </div>
             <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               <select
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-lg mt-[-5px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 onChange={(e) => changeLanguage(e.target.value)}
               >
                 <option value="en">English</option>
@@ -186,10 +186,11 @@ const Header = () => {
               </select>
             </div>
             <div>
-              <NavLink to="/order-history" className={activeLink}>
+              {/* <NavLink to="/order-history" className={activeLink}>
                 {t("orders")}
-              </NavLink>
+              </NavLink> */}
             </div>
+            {cart}
             <div>
               <ShowOnLogin>
                 <NavLink to="/" onClick={logoutUser}>
@@ -197,7 +198,6 @@ const Header = () => {
                 </NavLink>
               </ShowOnLogin>
             </div>
-            {cart}
           </div>
         </nav>
 
