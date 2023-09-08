@@ -46,9 +46,6 @@ const ProductList = ({ products }) => {
   }, [dispatch, products, search]);
 
   // Language change
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
   const { t } = useTranslation();
 
   return (

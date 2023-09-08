@@ -25,10 +25,6 @@ const ProductFilter = () => {
 
   const dispatch = useDispatch();
 
-  // Language change
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
   const { t } = useTranslation();
 
   const allCategories = [

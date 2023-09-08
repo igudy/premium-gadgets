@@ -160,12 +160,22 @@ const Header = () => {
             <li>
               <Link to="/contact">{t("contact-us")}</Link>
             </li>
+            <li>
+              <div>
+                <select onChange={(e) => changeLanguage(e.target.value)}>
+                  <option value="en">English</option>
+                  <option value="hausa">Hausa</option>
+                  <option value="igbo">Igbo</option>
+                  <option value="yoruba">Yoruba</option>
+                </select>
+              </div>
+            </li>
           </ul>
           <div className={styles["header-right"]} onClick={hideMenu}>
             <span className={styles.links}>
               <ShowOnLogout>
                 <NavLink to="/login" className={activeLink}>
-                  Login
+                  {t("login")}
                 </NavLink>
               </ShowOnLogout>
               <a href="#home" style={{ color: "#ff7722" }}>
