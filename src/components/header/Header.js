@@ -153,47 +153,50 @@ const Header = () => {
                 </button>
               </li>
             </AdminOnlyLink>
-
-            <li>
-              <NavLink to="/">{t("home")}</NavLink>
-            </li>
-            <li>
-              <Link to="/contact">{t("contact-us")}</Link>
-            </li>
-            <li>
-              <div>
-                <select onChange={(e) => changeLanguage(e.target.value)}>
-                  <option value="en">English</option>
-                  <option value="hausa">Hausa</option>
-                  <option value="igbo">Igbo</option>
-                  <option value="yoruba">Yoruba</option>
-                </select>
-              </div>
-            </li>
           </ul>
           <div className={styles["header-right"]} onClick={hideMenu}>
-            <span className={styles.links}>
+            <div className="text-white">
               <ShowOnLogout>
                 <NavLink to="/login" className={activeLink}>
                   {t("login")}
                 </NavLink>
               </ShowOnLogout>
-              <a href="#home" style={{ color: "#ff7722" }}>
+            </div>
+            <div>
+              <a href="#home" className="flex">
                 <FaUserCircle size={16} />
                 {displayName}
               </a>
-              {/* <NavLink to="/register" className={activeLink}>
-                Register
-              </NavLink> */}
+            </div>
+            <div className="">
+              <NavLink to="/">{t("home")}</NavLink>
+            </div>
+            <div>
+              <Link to="/contact">{t("contact-us")}</Link>
+            </div>
+            <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <select
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                onChange={(e) => changeLanguage(e.target.value)}
+              >
+                <option value="en">English</option>
+                <option value="hausa">Hausa</option>
+                <option value="igbo">Igbo</option>
+                <option value="yoruba">Yoruba</option>
+              </select>
+            </div>
+            <div>
               <NavLink to="/order-history" className={activeLink}>
                 {t("orders")}
               </NavLink>
+            </div>
+            <div>
               <ShowOnLogin>
                 <NavLink to="/" onClick={logoutUser}>
                   Logout
                 </NavLink>
               </ShowOnLogin>
-            </span>
+            </div>
             {cart}
           </div>
         </nav>

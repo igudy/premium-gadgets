@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* styles.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
 :root {
   --font-family: "Poppins", sans-serif;
   --dark-blue: #0a1930;
@@ -36,13 +42,12 @@ body {
 
 section {
   width: 100%;
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
 }
-
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
+  /* max-width: 1000px;
+  margin: 0 auto; */
+  padding: 50px;
 }
 
 /* UTILITY CLASSES */
@@ -419,15 +424,21 @@ p {
   border: 1px solid #ccc;
   border-radius: 50%;
 }
-
+/* Default link style */
 a {
   font-size: 1.4rem;
-  color: var(--dark-blue);
+  color: white;
   text-decoration: none;
-  transition: all 0.2s;
+  /* transition: all 0.2s; */
 }
 
+/* Style when hovered over */
 a:hover {
-  color: var(--color-dark);
+  /* color: var(--color-dark); */
   font-size: 1.5rem;
+}
+
+/* Style when clicked (active) */
+a:active {
+  color: lightcoral; 
 }
