@@ -1,86 +1,95 @@
 import React from "react";
-import styles from "./Footer.module.scss";
+import { useTranslation } from "react-i18next"; // Assuming you are using react-i18next for translation
 
-const date = new Date();
-const year = date.getFullYear();
+function Footer() {
+  const { t } = useTranslation();
 
-const Footer = () => {
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-              Company
+              {t("company")}
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
-                <a className=" hover:underline cursor-pointer">About</a>
+                <a className="hover:underline cursor-pointer">{t("about")}</a>
               </li>
               <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Careers</a>
-              </li>
-              <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Brand Center</a>
-              </li>
-              <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Blog</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-              Help center
-            </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
-              <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Discord Server</a>
-              </li>
-              <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Twitter</a>
-              </li>
-              <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Facebook</a>
-              </li>
-              <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-              Legal
-            </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
-              <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Privacy Policy</a>
-              </li>
-              <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Licensing</a>
+                <a className="hover:underline cursor-pointer">{t("careers")}</a>
               </li>
               <li className="mb-4">
                 <a className="hover:underline cursor-pointer">
-                  Terms &amp; Conditions
+                  {t("brand-center")}
+                </a>
+              </li>
+              <li className="mb-4">
+                <a className="hover:underline cursor-pointer">{t("blog")}</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              {t("help center")}
+            </h2>
+            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <li className="mb-4">
+                <a className="hover:underline cursor-pointer">
+                  {t("discord-server")}
+                </a>
+              </li>
+              <li className="mb-4">
+                <a className="hover:underline cursor-pointer">{t("twitter")}</a>
+              </li>
+              <li className="mb-4">
+                <a className="hover:underline cursor-pointer">
+                  {t("facebook")}
+                </a>
+              </li>
+              <li className="mb-4">
+                <a className="hover:underline cursor-pointer">
+                  {t("contact-us")}
                 </a>
               </li>
             </ul>
           </div>
           <div>
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-              Download
+              {t("legal")}
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
-                <a className="hover:underline cursor-pointer">iOS</a>
+                <a className="hover:underline cursor-pointer">
+                  {t("privacy-policy")}
+                </a>
               </li>
               <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Android</a>
+                <a className="hover:underline cursor-pointer">
+                  {t("licensing")}
+                </a>
               </li>
               <li className="mb-4">
-                <a className="hover:underline cursor-pointer">Windows</a>
+                <a className="hover:underline cursor-pointer">{t("terms")}</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              {t("download")}
+            </h2>
+            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <li className="mb-4">
+                <a className="hover:underline cursor-pointer">{t("ios")}</a>
               </li>
               <li className="mb-4">
-                <a className="hover:underline cursor-pointer">MacOS</a>
+                <a className="hover:underline cursor-pointer">{t("android")}</a>
+              </li>
+              <li className="mb-4">
+                <a className="hover:underline cursor-pointer">{t("windows")}</a>
+              </li>
+              <li className="mb-4">
+                <a className="hover:underline cursor-pointer">{t("macos")}</a>
               </li>
             </ul>
           </div>
@@ -88,6 +97,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

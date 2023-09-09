@@ -96,7 +96,7 @@ const ProductFilter = () => {
         </div>
         <br />
         <button className="--btn --btn-danger" onClick={clearFilters}>
-          Clear Filter
+          {t("clear-filter")}
         </button>
       </div>
     </div>

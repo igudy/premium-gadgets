@@ -64,6 +64,7 @@
   "total": "Total",
   "action": "Action",
   "clear-cart": "Clear Cart",
+  "clear-filter": "Clear Filter",
   "subtotal": "Subtotal",
   "shipping-calculated": "Tax and shipping are calculated at checkout",
   "checkout": "Checkout",
@@ -94,5 +95,24 @@
   "of": "Of",
   "page": "Page",
 
-  "explore": "Explore a wide range of products, from stylish smartphones to high-performance laptops and essential accessories"
+  "explore": "Explore a wide range of products, from stylish smartphones to high-performance laptops and essential accessories",
+
+  "company": "Company",
+  "about": "About",
+  "careers": "Careers",
+  "brand-center": "Brand Center",
+  "blog": "Blog",
+  "help center": "Help Center",
+  "discord-server": "Discord Server",
+  "twitter": "Twitter",
+  "facebook": "Facebook",
+  "legal": "Legal",
+  "privacy-policy": "Privacy Policy",
+  "licensing": "Licensing",
+  "terms": "Terms",
+  "conditions": "Conditions",
+  "ios": "iOS",
+  "android": "Android",
+  "windows": "Windows",
+  "macos": "macOS"
 }

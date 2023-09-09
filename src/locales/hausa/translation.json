@@ -84,6 +84,7 @@
   "back-shop": "Komawa Siyayya",
   "unit-price": "Farashin naúrar",
   "set-price": "Saita Farashi",
+  "clear-filter": "Share Tace",
 
   "hide-filter": "Boye Tace",
   "show-filter": "Nuna Tace",
@@ -93,5 +94,24 @@
   "of": "Na",
   "page": "Shafi",
 
-  "explore": "Bincika samfura da yawa, daga wayoyi masu salo zuwa kwamfyutoci masu inganci da kayan haɗi masu mahimmanci"
+  "explore": "Bincika samfura da yawa, daga wayoyi masu salo zuwa kwamfyutoci masu inganci da kayan haɗi masu mahimmanci",
+
+  "company": "Kwampanya",
+  "about": "Game da",
+  "careers": "Ko'ina",
+  "brand-center": "Tsarin Brand",
+  "blog": "Blog",
+  "help center": "Makirci",
+  "discord-server": "Server na Discord",
+  "twitter": "Twitter",
+  "facebook": "Facebook",
+  "legal": "Shar'i",
+  "privacy-policy": "Sauyin Ƙwararren Tsaro",
+  "licensing": "Lisansin",
+  "terms": "Shari",
+  "conditions": "Shawo",
+  "ios": "iOS",
+  "android": "Android",
+  "windows": "Windows",
+  "macos": "MacOS"
 }
