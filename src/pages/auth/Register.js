@@ -80,8 +80,8 @@ const Register = () => {
               </button>
             </form>
             <span className={styles.register}>
-              <p>A{t("already-account")}</p>
-              <Link to="/login" className="login-right">
+              <p>{t("already-account")}</p>
+              <Link to="/login" className="mx-2 text-black">
                 {t("login")}
               </Link>
             </span>

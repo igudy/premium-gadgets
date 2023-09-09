@@ -108,7 +108,9 @@ const Login = () => {
             </button>
             <span className={styles.register}>
               <p>{t("no-account")}</p>
-              <Link to="/register">{t("register")}</Link>
+              <Link to="/register" className="mx-3 text-black">
+                {t("register")}
+              </Link>
             </span>
           </div>
         </Card>
